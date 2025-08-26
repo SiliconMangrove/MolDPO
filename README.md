@@ -2,31 +2,32 @@
 
 # De Novo Molecular Design Enabled by Direct Preference Optimization and Curriculum Learning
 
-本仓库为 **ECML-PKDD 2025** 论文 *"De Novo Molecular Design Enabled by Direct Preference Optimization and Curriculum Learning"* 的代码实现。
+This repository contains the code implementation for the **ECML-PKDD 2025** paper *"De Novo Molecular Design Enabled by Direct Preference Optimization and Curriculum Learning"*.
 
 ---
 
-## 环境配置
+## Environment Setup
 
-### 方法一：通过 `environment.yml` 创建
+### Method 1: Create via `environment.yml`
 
 ```bash
 conda env create -f environment.yml
 ```
 
-然后手动修改以下文件：
+Then manually modify the following file:
 
-* 路径：`lib/python3.10/site-packages/guacamol/utils/chemistry.py`
+* Path: `lib/python3.10/site-packages/guacamol/utils/chemistry.py`
 
-  * **删除**：
+  * **Delete**:
 
     ```python
     from scipy import histogram
     ```
-  * **修改**：将所有 `histogram` 替换为 `np.histogram`
+  * **Modify**: Replace all occurrences of `histogram` with `np.histogram`
 
-### 方法二：直接解压已有环境
-下载conda pack打包的环境**[环境连接](https://drive.google.com/file/d/1jg6md4Cwv1C7dHXO8loggGJjo0d6n_BA/view?usp=sharing)**。
+### Method 2: Directly unpack the prebuilt environment
+
+Download the conda-packaged environment from [environment link](https://drive.google.com/file/d/1jg6md4Cwv1C7dHXO8loggGJjo0d6n_BA/view?usp=sharing).
 
 ```bash
 tar -xzf molDPO.tar.gz -C ~/miniconda3/envs/molDPO
@@ -34,33 +35,34 @@ tar -xzf molDPO.tar.gz -C ~/miniconda3/envs/molDPO
 conda activate molDPO
 ```
 
-> ⚠️ 请将 `miniconda3` 替换为你实际的 conda 安装路径。
+> ⚠️ Please replace `miniconda3` with your actual conda installation path.
 
 ---
 
-## 使用方法
+## Usage
 
-运行主程序：
+Run the main program:
 
 ```bash
 python DPO_guacamol.py
 ```
 
-* 如果启用课程学习（Curriculum Learning）：
+* If curriculum learning is enabled:
 
-  * 第一个课程需设置参数 `first_course=True`
-  * 后续课程需设置 `first_course=False`
-
----
-
-## 致谢
-
-框架代码（如 `model.py`、`vocabulary.py`）来源于对比基线方法 **[MolRL-MGPT](https://github.com/HXYfighter/MolRL-MGPT)**。
+  * The first course should be set with parameter `first_course=True`
+  * Subsequent courses should be set with `first_course=False`
 
 ---
 
-## 联系方式
+## Acknowledgements
 
-如有问题，欢迎通过邮件联系我。
+Framework code (such as `model.py`, `vocabulary.py`) is adapted from the baseline method **[MolRL-MGPT](https://github.com/HXYfighter/MolRL-MGPT)**.
 
 ---
+
+## Contact
+
+If you have any questions, feel free to contact me via email.
+
+---
+
