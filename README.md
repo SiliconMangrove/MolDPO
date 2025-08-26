@@ -26,6 +26,7 @@ conda env create -f environment.yml
   * **修改**：将所有 `histogram` 替换为 `np.histogram`
 
 ### 方法二：直接解压已有环境
+下载conda pack打包的环境**[环境连接](https://drive.google.com/file/d/1jg6md4Cwv1C7dHXO8loggGJjo0d6n_BA/view?usp=sharing)**。
 
 ```bash
 tar -xzf molDPO.tar.gz -C ~/miniconda3/envs/molDPO
